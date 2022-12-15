@@ -1569,7 +1569,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-21 20:08:23 +0000">11/21/2022</time>
+    <time datetime="2022-12-14 18:24:13 +0000">12/14/2022</time>
     
   
 
@@ -1643,33 +1643,43 @@
 <p>認証にLDAPを使用するようにAstraを設定する前に、制限事項や設定オプションなど、ネットアップが提供する基本的な設定を確認しておく必要があります。</p>
 </div>
 <div class="paragraph">
+<div class="title">Astra Control Centerでのみサポートされます</div>
 <p>Astra Controlプラットフォームには、2つの導入モデルがあります。LDAP認証はAstra Control Centerの導入でのみサポートされます。</p>
 </div>
 <div class="paragraph">
+<div class="title">REST APIの設定のみ</div>
 <p>現在のリリースのAstra Control Centerは、Astra Control REST APIを使用したLDAP認証の設定のみをサポートしています。この制限の重要な点は、Astra WebインターフェイスのUsersタブにLDAPユーザが表示されないことです。エンドポイントでREST APIを使用して使用できます <code>../core/v1/users</code>。</p>
 </div>
 <div class="paragraph">
+<div class="title">LDAPサーバが必要です</div>
 <p>Astra認証要求を受け入れて処理するには、LDAPサーバが必要です。MicrosoftのActive Directoryは、現在のAstra Control Centerリリースでサポートされています。</p>
 </div>
 <div class="paragraph">
+<div class="title">LDAPサーバへのセキュアな接続</div>
 <p>AstraでLDAPサーバを設定する場合、必要に応じてセキュアな接続を定義できます。この場合は、LDAPSプロトコルの証明書が必要です。</p>
 </div>
 <div class="paragraph">
+<div class="title">ユーザまたはグループを設定します</div>
 <p>LDAPを使用して認証するユーザを選択する必要があります。これは、個々のユーザまたはユーザのグループを指定することで実行できます。アカウントはLDAPサーバで定義する必要があります。また、認証要求をLDAPに転送できるようにするために、Astra（タイプLDAP）で識別する必要もあります。</p>
 </div>
 <div class="paragraph">
+<div class="title">ユーザまたはグループをバインドするときのロールの制約</div>
 <p>現在リリースされているAstra Control Centerでは、でサポートされている値はのみです <code>roleConstraint</code> は「*」です。これは、ユーザがネームスペースの制限に制限されておらず、すべてのネームスペースにアクセスできることを示しています。を参照してください <a href="../workflows_infra/wf_ldap_add_entries.html">"AstraにLDAPエントリを追加"</a> を参照してください。</p>
 </div>
 <div class="paragraph">
+<div class="title">LDAPクレデンシャル</div>
 <p>LDAPで使用されるクレデンシャルには、ユーザ名（Eメールアドレス）と関連付けられたパスワードが含まれます。</p>
 </div>
 <div class="paragraph">
+<div class="title">一意のEメールアドレス</div>
 <p>Astra Control Center環境でユーザ名として機能するすべての電子メールアドレスは、一意である必要があります。Astraにすでに定義されているEメールアドレスを持つLDAPユーザを追加することはできません。重複するEメールが存在する場合は、最初にAstraから削除する必要があります。を参照してください <a href="https://docs.netapp.com/us-en/astra-control-center/use/manage-users.html#remove-users" target="_blank" rel="noopener">"ユーザを削除します"</a> 詳細については、Astra Control Centerのドキュメントサイトを参照してください。</p>
 </div>
 <div class="paragraph">
+<div class="title">必要に応じて、LDAPユーザおよびグループを先に定義します</div>
 <p>LDAPユーザとグループは、LDAPにまだ存在していない場合やLDAPサーバが設定されていない場合でも、Astra Control Centerに追加できます。これにより、LDAPサーバを設定する前にユーザとグループを事前に設定できます。</p>
 </div>
 <div class="paragraph">
+<div class="title">複数のLDAPグループに定義されたユーザ</div>
 <p>あるLDAPユーザが複数のLDAPグループに属していて、グループにAstraで別々のロールが割り当てられている場合、認証時にそのユーザの有効なロールが最も特権的に使用されます。たとえば、ユーザがに割り当てられている場合などです <code>viewer</code> group1のロールですが、にはがあります <code>member</code> group2での役割は、ユーザーの役割です <code>member</code>。これは、Astraが使用する階層に基づいています（最高から最低まで）。</p>
 </div>
 <div class="ulist">
@@ -1689,12 +1699,15 @@
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">定期的なアカウント同期</div>
 <p>Astraは、ユーザーとグループを約60秒ごとにLDAPサーバーと同期します。したがって、ユーザまたはグループがLDAPに追加またはLDAPから削除されると、Astraで利用可能になるまでに最大1分かかる場合があります。</p>
 </div>
 <div class="paragraph">
+<div class="title">LDAP設定の無効化とリセット</div>
 <p>LDAP設定をリセットする前に、LDAP認証を無効にする必要があります。また、LDAPサーバを変更します (<code>connectionHost</code>）をクリックし、両方の操作を実行する必要があります。を参照してください <a href="../workflows_infra/wf_ldap_disable_reset.html">"LDAPを無効にしてリセットします"</a> を参照してください。</p>
 </div>
 <div class="paragraph">
+<div class="title">REST APIパラメータ</div>
 <p>LDAPの設定ワークフローは、特定のタスクを実行するためにREST API呼び出しを実行します。各API呼び出しについて、表示されるサンプルに示すような入力パラメータを含めることができます。を参照してください <a href="../reference/api_reference.html">"API リファレンス"</a> 参照ドキュメントの検索方法については、を参照してください。</p>
 </div>
 </div>

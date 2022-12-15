@@ -1569,7 +1569,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-21 20:08:23 +0000">11/21/2022</time>
+    <time datetime="2022-12-14 18:24:13 +0000">12/14/2022</time>
     
   
 
@@ -1605,6 +1605,7 @@
 <p>Astra Control REST API は、 RESTful 設計の原則に準拠しています。各アストラリソースインスタンスは、明確に定義されたリソースタイプに基づいて作成されます。同じタイプのリソースインスタンスのセットを * 集合 * と呼びます。API 呼び出しは、個々のリソースまたはリソースの集合に対して機能します。</p>
 </div>
 <div class="paragraph">
+<div class="title">リソースタイプ</div>
 <p>Astra Control REST API に含まれるリソースタイプには、次の特徴があります。</p>
 </div>
 <div class="ulist">
@@ -1621,6 +1622,7 @@
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">リソースインスタンス</div>
 <p>Astra Control REST API から使用できるリソースインスタンスには、次のような特徴があります。</p>
 </div>
 <div class="ulist">
@@ -1643,6 +1645,7 @@
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">リソースコレクション</div>
 <p>Astra Control REST API で使用できるリソース収集には、次のような特徴があります。</p>
 </div>
 <div class="ulist">
@@ -1656,6 +1659,7 @@
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">インスタンス ID</div>
 <p>すべてのリソースインスタンスには、作成時に識別子が割り当てられます。この識別子は 128 ビットの UUIDv4 値です。割り当てられた UUIDv4 の値は、グローバルに一意で変更できません。新しいインスタンスを作成するAPI呼び出しを発行すると、関連付けられたIDを含むURLがの呼び出し元に返されます <code>Location</code> HTTP応答のヘッダー。リソースインスタンスを以降の呼び出しで参照する際には、この識別子を抽出して使用できます。</p>
 </div>
 <div class="admonitionblock note">
@@ -1679,6 +1683,7 @@
 <p>すべてのアストラ制御リソースは、共通の構造を使用して定義されます。</p>
 </div>
 <div class="paragraph">
+<div class="title">共通のデータ</div>
 <p>すべてのアストラリソースには、次の表に示すキーと値が含まれています。</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -1712,6 +1717,7 @@
 </tbody>
 </table>
 <div class="paragraph">
+<div class="title">メタデータオブジェクト</div>
 <p>各アストラリソースに含まれるメタデータ JSON オブジェクトには、次の表に示すキーと値が含まれています。</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -1745,6 +1751,7 @@
 </tbody>
 </table>
 <div class="paragraph">
+<div class="title">リソースの状態</div>
 <p>選択したリソースA <code>state</code> ライフサイクル移行のオーケストレーションとアクセスの制御に使用する値。</p>
 </div>
 </div>
